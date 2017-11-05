@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+    	"env",
+      {
+        "targets": {
+          "node": "current"
+        },
+        "useBuiltIns": true
+    },
+ ], "react"
+  ],
+  "plugins": [
+     "react-hot-loader/babel",
+       "transform-runtime"
+     ]
+}

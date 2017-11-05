@@ -1,0 +1,9 @@
+.btn{
+  font-size: 20px;
+  color: red;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(0);
+}
