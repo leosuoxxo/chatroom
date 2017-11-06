@@ -1,1 +1,33 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Document</title><link href="app.fb4b2.css" rel="stylesheet"></head><body><div id="app"></div><script type="text/javascript" src="manifest.4ff77c7c55e11988b6de.js"></script><script type="text/javascript" src="vendor.87f899a0a2ca9ed3ba11.js"></script><script type="text/javascript" src="app.51ba9d99cf9ee4739843.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="app.fb4b2.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="text/javascript" src="manifest.f6b8899412857780b7b9.js"></script>
+  <script type="text/javascript" src="vendor.87f899a0a2ca9ed3ba11.js"></script>
+  <script type="text/javascript" src="app.97c5d3dc767de89dec44.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $.ajax({
+      url: '/api/colorlist',
+      type: "get",
+      dataType: 'json',
+      success: function(data) {
+        alert(data.name)
+      },
+      error: function(responseText) {
+        console.log(responseText)
+      }
+    });
+  </script>
+</body>
+
+</html>
