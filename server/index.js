@@ -4,21 +4,23 @@ const path = require('path');
 const serve = require('koa-static');
 const router = require('koa-router')();
 const bodyParser = require('koa-bodyparser');
+const logger = require('koa-logger');
 
 const app = new Koa();
 
+app.use(logger());
 app.use(bodyParser());
 
-app.use(async (ctx, next) => {
-  console.log(`Process ${ctx.request.method} ${ctx.request.url}...`);
-  await next();
-});
+const server = require('http').Server(app.callback());
+const io = require('socket.io')(server);
+
 
 app.use(serve(path.join(__dirname, '../dist')));
 
 app.use(views(path.join(__dirname, '../dist'), {
   extension: 'html'
 }));
+
 
 router.get('/api/colorlist', async (ctx) => {
   console.log('123');
