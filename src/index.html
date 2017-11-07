@@ -10,6 +10,20 @@
 
 <body>
   <div id="app"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $.ajax({
+      url: '/api/colorlist',
+      type: "get",
+      dataType: 'json',
+      success: function(data) {
+        alert(data.name)
+      },
+      error: function(responseText) {
+        console.log(responseText)
+      }
+    });
+  </script>
 </body>
 
 </html>
