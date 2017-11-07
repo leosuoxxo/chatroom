@@ -1,27 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import Router from 'router/router';
-
+import MainPage from './containers/SignAndLog/Main';
 import './assets/sass/main.sass';
 
-function renderWithHotReload(RootElement) {
-  ReactDom.render(
-    <AppContainer>
-      {RootElement}
-    </AppContainer>,
-    document.getElementById('app')
-  );
-}
 
-renderWithHotReload(Router());
-
-if (module.hot) {
-  module.hot.accept('router/router', () => {
-    const getRouter = require('router/router').default;
-    renderWithHotReload(getRouter());
-  });
-}
+const MyPage = () => (
+  <div><MainPage /></div>
+);
 
 
-ReactDom.render(<Router />, document.getElementById('app'));
+ReactDom.render(<MyPage />, document.getElementById('app'));

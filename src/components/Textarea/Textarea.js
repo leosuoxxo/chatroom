@@ -36,16 +36,8 @@ class Textarea extends Component {
   render() {
     return (
       <div className="textareaBox">
-        <input
-          type="text"
-          onChange={this.changeVarHandler}
-          value={this.state.varname}
-        />
-        <input
-          type="text"
-          onChange={this.changeColorHandler}
-          value={this.state.colorcode}
-        />
+        <input type="text" onChange={this.changeVarHandler} value={this.state.varname} />
+        <input type="text" onChange={this.changeColorHandler} value={this.state.colorcode} />
         <button onClick={this.createCard}>新增</button>
       </div>
     );
@@ -55,5 +47,6 @@ class Textarea extends Component {
 Textarea.propTypes = {
   colorMsg: PropTypes.func.isRequired
 };
+
 
 export default Textarea;
