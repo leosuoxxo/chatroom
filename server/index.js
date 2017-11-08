@@ -1,6 +1,6 @@
 require('./db');
-const router = require('./router');
 const Koa = require('koa');
+const router = require('./router');
 const views = require('koa-views');
 const path = require('path');
 const serve = require('koa-static');
@@ -21,13 +21,18 @@ app.use(views(path.join(__dirname, '../dist'), {
   extension: 'html'
 }));
 
+app.use((ctx) => {
+  if (ctx.url.indexOf('api') < 0) {
+    ctx.render('index.html');
+  }
+});
 
 app.use(router.routes());
 
-app.use(async (ctx) => {
-  if (ctx.url.indexOf('api') < 0) {
-    await ctx.render('index.html');
-  }
-});
+// app.use(async (ctx) => {
+//   if (ctx.url.indexOf('api') < 0) {
+//     await ctx.render('index.html');
+//   }
+// });
 
 app.listen(8080);
