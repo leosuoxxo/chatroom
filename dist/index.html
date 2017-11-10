@@ -20,8 +20,9 @@
       url: '/api/login',
       type: "post",
       dataType: 'json',
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       success: function(data) {
-        alert(data.name)
+        console.log(data);
       },
       error: function(responseText) {
         console.log(responseText)

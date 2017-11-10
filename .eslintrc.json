@@ -40,6 +40,10 @@
         "ignore": ["components/", "config/", "containers/", "router/"]
       }
     ],
+    "prefer-destructuring": ["error", {
+      "array": false,
+      "object": true
+    }],
     "linebreak-style": "off",
     "global-require": "off",
     "class-methods-use-this": "off"

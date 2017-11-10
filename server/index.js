@@ -7,6 +7,7 @@ const serve = require('koa-static');
 const bodyParser = require('koa-bodyparser');
 const logger = require('koa-logger');
 
+
 const app = new Koa();
 
 app.use(logger());
@@ -21,13 +22,15 @@ app.use(views(path.join(__dirname, '../dist'), {
   extension: 'html'
 }));
 
-app.use((ctx) => {
-  if (ctx.url.indexOf('api') < 0) {
-    ctx.render('index.html');
-  }
+app.use((ctx, next) => {
+  console.log(ctx);
+  ctx.render('index.html');
+  return next();
 });
 
+// app.use(router.routes()).use(router.allowedMethods());
 app.use(router.routes());
+
 
 // app.use(async (ctx) => {
 //   if (ctx.url.indexOf('api') < 0) {
