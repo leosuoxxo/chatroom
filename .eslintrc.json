@@ -1,15 +1,15 @@
 {
   "extends": "airbnb",
-  "plugins": ["react", "jsx-a11y", "import"],
+  "plugins": [ "react", "jsx-a11y", "import" ],
   "env": {
     "browser": true,
     "node": true
   },
   "rules": {
-    "comma-dangle": ["error", "never"],
-    "indent": ["error", 2],
+    "comma-dangle": [ "error", "never" ],
+    "indent": [ "error", 2 ],
     "max-len": 0,
-    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent": [ "error", 2 ],
     "no-underscore-dangle": "off",
     "brace-style": [
       "error",
@@ -21,29 +21,30 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [ ".js", ".jsx" ]
       }
     ],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
-        "components": ["Link"],
-        "specialLink": ["to"]
+        "components": [ "Link" ],
+        "specialLink": [ "to" ]
       }
     ],
-    "react/prefer-stateless-function": ["warn"],
-    "import/no-extraneous-dependencies": ["off"],
+    "react/prefer-stateless-function": [ "warn" ],
+    "import/no-extraneous-dependencies": [ "off" ],
     "import/extensions": "off",
     "import/no-unresolved": [
       "error",
       {
-        "ignore": ["components/", "config/", "containers/", "router/"]
+        "ignore": [ "components/", "config/", "containers/", "router/" ]
       }
     ],
-    "prefer-destructuring": ["error", {
+    "prefer-destructuring": [ "error", {
       "array": false,
       "object": true
-    }],
+    } ],
+    "camelcase": "off",
     "linebreak-style": "off",
     "global-require": "off",
     "class-methods-use-this": "off"

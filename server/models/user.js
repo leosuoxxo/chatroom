@@ -14,6 +14,15 @@ const UserSchema = new Schema({
   Nickname: {
     type: String,
     unique: true
+  },
+  Avatar: {
+    type: String,
+    dafault: '',
+    unique: true
+  },
+  createTime: {
+    type: Date,
+    dafault: Date.now()
   }
 });
 
