@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const BtnBox = styled.ul`
 display:flex;
@@ -17,43 +18,25 @@ display:flex;
 align-items:center;
 justify-content:flex-start;
 cursor:pointer;
+transition:0.3s ease;
 `;
 
 class SignAndLog extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { Scolor: 'black', Lcolor: 'grey' };
-    this.chooseFun = this.chooseFun.bind(this);
-    localStorage.setItem('fuck', this.state.Scolor);
-  }
-
-
-  chooseFun(e) {
-    const myName = e.target.dataset.name;
-    if (myName === 'sign') {
-      this.setState({
-        Scolor: 'black',
-        Lcolor: 'grey'
-      });
-      localStorage.setItem('status', myName);
-    } else {
-      this.setState({
-        Scolor: 'grey',
-        Lcolor: 'black'
-      });
-      localStorage.setItem('status', myName);
-    }
-  }
-
   render() {
     return (
       <BtnBox>
-        <MyBtn onClick={this.chooseFun} data-name="sign" style={{ color: this.state.Scolor }}>註冊</MyBtn>
-        <MyBtn onClick={this.chooseFun} data-name="log" style={{ color: this.state.Lcolor }}>登入</MyBtn>
+        <MyBtn onClick={this.props.chooseFun} style={{ color: this.props.Scolor }} data-name="sign">註冊</MyBtn>
+        <MyBtn onClick={this.props.chooseFun} style={{ color: this.props.Lcolor }} data-name="log">登入</MyBtn>
       </BtnBox>
     );
   }
 }
+
+SignAndLog.propTypes = {
+  chooseFun: PropTypes.func.isRequired,
+  Scolor: PropTypes.string.isRequired,
+  Lcolor: PropTypes.string.isRequired
+};
 
 
 export default SignAndLog;
