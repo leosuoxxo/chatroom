@@ -6,8 +6,9 @@ display:flex;
 align-items:center;
 justify-content:flex-start;
 font-weight:900;
-font-size:12vw;
+font-size:10vw;
 letter-spacing:-0.5vw;
+line-height:1.3em;
 `;
 
 
