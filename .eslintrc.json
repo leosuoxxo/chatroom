@@ -47,6 +47,7 @@
     "camelcase": "off",
     "linebreak-style": "off",
     "global-require": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "react/no-unused-state": "off"
   }
 }

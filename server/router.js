@@ -3,6 +3,7 @@ const userctrl = require('./controllers/users/UserController');
 
 router
   .post('/api/login', userctrl.login)
-  .post('/api/register', userctrl.register);
-
+  .post('/api/register', userctrl.register)
+  .get('/api/checkLogin', userctrl.checkLogin)
+  .get('/api/logout', userctrl.logout);
 module.exports = router;

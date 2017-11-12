@@ -1,13 +1,18 @@
 
-import ApiError, { ERROR } from '../error/ApiError';
-
+// import ApiError , { ERROR } from '../error/ApiError';
+// const ApiError = require('../error/ApiError');
 
 const resformat = (ctx) => {
-  if (ctx.body) {
+  if (ctx.body && !ctx.state.error) {
     ctx.body = {
       ok: true,
       msg: 'success',
       result: ctx.body
+    };
+  } else if (ctx.body && ctx.state.error) {
+    ctx.body = {
+      ok: false,
+      msg: ctx.body.message
     };
   } else {
     ctx.body = {
@@ -20,36 +25,21 @@ const resformat = (ctx) => {
 const filter = pattern => async (ctx, next) => {
   const reg = new RegExp(pattern);
   try {
+    ctx.state.error = false;
     await next();
-    if (reg.test(ctx.originalUrl)) {
-      resformat(ctx);
-    }
-  } catch (err) {
-    let status;
-    switch (err.type) {
-    case ERROR.FORMAT_INVALID:
-    case ERROR.DATA_EXISTED:
-    case ERROR.DATA_INVALID:
-      status = 400;
-      break;
-    case ERROR.LOGIN_REQUIRED:
-      status = 401;
-      break;
-    case ERROR.PERMISSION_DENIED:
-      status = 403;
-      break;
-    case ERROR.DATA_NOT_FOUND:
-      status = 404;
-      break;
-    default:
-      status = 500;
-    }
-    ctx.status = status;
-    ctx.body = err;
-    ctx.body = {
-      ok: false,
-      msg: err
-    };
+  } catch (error) {
+    console.log(error);
+    // if (error instanceof ApiError && reg.test(ctx.originalUrl)) {
+    //   ctx.status = 200;
+    //   ctx.body = {
+    //     code: error.code,
+    //     message: error.message
+    //   };
+    // }
+    throw error;
+  }
+  if (reg.test(ctx.originalUrl)) {
+    resformat(ctx);
   }
 };
 

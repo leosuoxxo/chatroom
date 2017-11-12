@@ -16,13 +16,10 @@ const UserSchema = new Schema({
     unique: true
   },
   Avatar: {
-    type: String,
-    dafault: '',
-    unique: true
+    type: String
   },
-  createTime: {
-    type: Date,
-    dafault: Date.now()
+  Token: {
+    type: String
   }
 });
 
