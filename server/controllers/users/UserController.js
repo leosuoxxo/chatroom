@@ -3,9 +3,6 @@ const ApiError = require('../../error/ApiError');
 const ApiErrorNames = require('../../error/ApiErrorNames');
 const UserModel = require('../../models/user');
 const jwt = require('jsonwebtoken');
-// const util = require('util');
-
-// const verify = util.promisify(jwt.verify); // 解密
 
 const secret = 'just talk';
 

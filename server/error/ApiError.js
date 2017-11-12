@@ -1,7 +1,6 @@
 const ApiErrorNames = require('./ApiErrorNames');
 
 class ApiError extends Error {
-  // 构造方法
   constructor(error_name) {
     super();
 

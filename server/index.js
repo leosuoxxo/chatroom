@@ -10,9 +10,9 @@ const json = require('koa-json');
 const resformat = require('./middlewares/resformat');
 const cors = require('koa2-cors');
 // const jwt = require('jsonwebtoken');
-const jwtKoa = require('koa-jwt');
+// const jwtKoa = require('koa-jwt');
 
-const secret = 'just talk';
+// const secret = 'just talk';
 
 const app = new Koa();
 
