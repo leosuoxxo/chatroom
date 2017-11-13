@@ -60,7 +60,9 @@ class MainPage extends Component {
         pass: 'none',
         passBorder: 'none',
         account: 'none',
-        accountBorder: 'none'
+        accountBorder: 'none',
+        email: 'none',
+        emailBorder: 'none'
       });
     }
   }
@@ -111,7 +113,7 @@ class MainPage extends Component {
       <div>
         <Title />
         <SignAndLog chooseFun={this.chooseFun} Scolor={this.state.Scolor} Lcolor={this.state.Lcolor} />
-        <FillField display={this.state.display} placeholder={this.state.placeholder} password={this.state.password} hint={this.state.hint} inputBorder={this.state.inputBorder} pass={this.state.pass} passBorder={this.state.passBorder} email={this.state.email} emailBorder={this.state.emailBorder} account={this.state.email} accountBorder={this.state.emailBorder} />
+        <FillField display={this.state.display} placeholder={this.state.placeholder} password={this.state.password} hint={this.state.hint} inputBorder={this.state.inputBorder} pass={this.state.pass} passBorder={this.state.passBorder} email={this.state.email} emailBorder={this.state.emailBorder} account={this.state.account} accountBorder={this.state.accountBorder} />
         <Confirmbutton checkFunc={this.checkFunc} />
       </div>
     );
