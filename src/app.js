@@ -41,6 +41,10 @@ class MainPage extends Component {
     if (myName === 'sign') {
       // 顯示註冊欄位
 
+      document.getElementById('myPassword').value = '';
+      document.getElementById('myAccount').value = '';
+      document.getElementById('secondPassword').value = '';
+      document.getElementById('myEmail').value = '';
       this.setState({
         Scolor: 'black',
         Lcolor: 'grey',
@@ -51,6 +55,10 @@ class MainPage extends Component {
     } else {
       // 顯示登入欄位
 
+      document.getElementById('myPassword').value = '';
+      document.getElementById('myAccount').value = '';
+      document.getElementById('secondPassword').value = '';
+      document.getElementById('myEmail').value = '';
       this.setState({
         Scolor: 'grey',
         Lcolor: 'black',
@@ -62,7 +70,9 @@ class MainPage extends Component {
         account: 'none',
         accountBorder: 'none',
         email: 'none',
-        emailBorder: 'none'
+        emailBorder: 'none',
+        hint: 'none',
+        inputBorder: 'none'
       });
     }
   }
